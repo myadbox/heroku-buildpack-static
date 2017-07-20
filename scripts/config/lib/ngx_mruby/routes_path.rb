@@ -16,5 +16,10 @@ if NginxConfigUtil.match_proxies(proxies.keys, uri) || NginxConfigUtil.match_red
   # this will always fail, so try_files uses the callback
   uri
 else
+  puts "ROUTING"
+  puts req.var.uri
+  puts req.var.route
+  puts "/#{routes[nginx_route]}"
+  puts "END ROUTING"
   "/#{routes[nginx_route]}"
 end
